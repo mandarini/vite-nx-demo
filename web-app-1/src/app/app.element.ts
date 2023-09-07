@@ -1,4 +1,5 @@
 import './app.element.css';
+import { jsLib1 } from '@vite-nx-demo/js-lib-1';
 
 export class AppElement extends HTMLElement {
   public static observedAttributes = [];
@@ -11,6 +12,7 @@ export class AppElement extends HTMLElement {
         <!--  WELCOME  -->
         <div id="welcome">
           <h1>
+          <p>${jsLib1()}</p>
             <span> Hello there, </span>
             Welcome ${title} 👋
           </h1>

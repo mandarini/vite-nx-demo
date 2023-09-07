@@ -1,0 +1,72 @@
+{
+  "name": "react-app-1",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "react-app-1/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/react-app-1"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-app-1:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-app-1:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "react-app-1:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "react-app-1:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "react-app-1:build:development"
+        },
+        "production": {
+          "buildTarget": "react-app-1:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../coverage/react-app-1"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["react-app-1/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": []
+}

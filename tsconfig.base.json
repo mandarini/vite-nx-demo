@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@vite-nx-demo/js-lib-1": ["js-lib-1/src/index.ts"],
+      "@vite-nx-demo/js-lib-2": ["js-lib-2/src/index.ts"],
+      "@vite-nx-demo/react-lib-1": ["react-lib-1/src/index.ts"],
+      "@vite-nx-demo/react-lib-2": ["react-lib-2/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

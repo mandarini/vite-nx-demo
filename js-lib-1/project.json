@@ -1,0 +1,31 @@
+{
+  "name": "js-lib-1",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "js-lib-1/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/js-lib-1"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../coverage/js-lib-1"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["js-lib-1/**/*.ts", "js-lib-1/package.json"]
+      }
+    }
+  },
+  "tags": []
+}
